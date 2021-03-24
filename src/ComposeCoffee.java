@@ -50,6 +50,7 @@ public class ComposeCoffee {
 		System.out.println("Product Number: ");
 		int productnum3 = input.nextInt();
 		System.out.println("Write the product name you want to change value.");
+		System.out.println("Product Name: ");
 		String productnum4 = input.next();
 		
 		printmenu();
