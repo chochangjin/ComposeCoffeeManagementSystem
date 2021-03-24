@@ -7,14 +7,7 @@ public class ComposeCoffee {
 		Scanner input = new Scanner(System.in);
 		
 		while (num != 6) {
-			System.out.println("1. Add Products");
-			System.out.println("2. Delete Products");
-			System.out.println("3. Edit Products");
-			System.out.println("4. View Products");
-			System.out.println("5. Show a menu");
-			System.out.println("6. Exit");
-			System.out.println("Select one number between 1-6: ");
-			
+			printmenu();			
 			
 		while ((num = input.nextInt()) !=6 ) {
 			switch (num) {
@@ -31,8 +24,7 @@ public class ComposeCoffee {
 		}
 	}
 	
-	
-	
+
 	static public void addProduct() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Product Number: ");
