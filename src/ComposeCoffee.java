@@ -16,7 +16,7 @@ public class ComposeCoffee {
 				case (2) : coffeemanager.deleteProduct(); break;
 				case (3) : coffeemanager.editProduct(); break;
 				case (4) : coffeemanager.viewProduct(); break;
-				case (5) : printmenu(); break;
+				case (5) : break;
 				default :
 					System.out.println("메뉴를 잘못 선택하셨습니다." + "\n");
 				}
@@ -25,9 +25,6 @@ public class ComposeCoffee {
 				
 		}
 	}
-	
-
-
 	
 	static public void printmenu() {
 		System.out.println("1. Add Products");
