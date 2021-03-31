@@ -48,11 +48,13 @@ public class CoffeeManager {
 			
 			if (choose == 1) {
 				System.out.println("Write the Product Name you want to change.");
-				String Pname = input.next();
+				String edit = input.next();
+				coffee.Pname = edit;
 			}
 			else {
 				System.out.println("Write the Product Price you want to change.");
-				int price = input.nextInt();
+				int edit = input.nextInt();
+				coffee.price = edit;
 			}
 		}
 	
