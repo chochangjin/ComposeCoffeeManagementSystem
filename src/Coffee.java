@@ -18,7 +18,4 @@ public class Coffee {
 		System.out.println("Product Name : " + Pname);
 		System.out.println("Product Price : " + price);
 	}
-	
-	
-	
 }
