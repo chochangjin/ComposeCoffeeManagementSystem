@@ -17,13 +17,14 @@ public class CoffeeManager {
 	
 	public void addProduct() {
 		int kind = 0;
-		while (kind !=1 && kind !=2) {
+		
+		while (kind !=1 && kind !=2 && kind !=3 && kind !=4) {
 			System.out.println("Select Coffee Kind :");
 			System.out.println("1 for Coffee");
 			System.out.println("2 for Juice");
 			System.out.println("3 for Ade");
 			System.out.println("4 for Tea");
-			System.out.println("Select num for Coffee Kind between 1 and 2 :");
+			System.out.println("Select num for Coffee Kind 1 ~ 4 :");
 			kind = input.nextInt();
 			if (kind == 1) {
 				coffee = new CoffeeCoffee();
