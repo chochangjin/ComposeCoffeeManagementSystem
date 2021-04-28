@@ -3,6 +3,7 @@ import java.util.Scanner;
 import Coffee.AdeCoffee;
 import Coffee.Coffee;
 import Coffee.CoffeeCoffee;
+import Coffee.CoffeeKind;
 import Coffee.JuiceCoffee;
 import Coffee.TeaCoffee;
 
@@ -29,7 +30,7 @@ public class CoffeeManager {
 			if (kind == 1) {
 				coffee = new CoffeeCoffee();
 				coffee.getCoffeeInput(input);
-				coffees.add(coffee);
+				coffees.add(coffee);				
 				break;
 			}
 			else if (kind == 2) {

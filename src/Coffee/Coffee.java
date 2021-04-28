@@ -50,7 +50,6 @@ public class Coffee {
 	}
 	
 	public void printInfo() {
-		System.out.println("Product Kind : " + kind );
 		System.out.println("Product Number : " + Pnum);
 		System.out.println("Product Name : " + Pname);
 		System.out.println("Product Price : " + price);

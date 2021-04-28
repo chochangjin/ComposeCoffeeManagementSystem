@@ -3,6 +3,13 @@ package Coffee;
 import java.util.Scanner;
 
 public class JuiceCoffee extends Coffee {
+	
+	public void Coffee(int Pnum,  String Pname, int price) {
+		this.Pnum = Pnum + 23;
+		this.Pname = Pname;
+		this.price = price;
+	}
+	
 	public void getCoffeeInput(Scanner input) {
 		System.out.println("Product Number: ");
 		int Pnum = input.nextInt();
