@@ -28,8 +28,6 @@ public class JuiceCoffee extends Coffee {
 				this.setPrice(price);
 				break;
 			}
-			else {
-			}
 		}
 	}
 }
