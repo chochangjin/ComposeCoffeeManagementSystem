@@ -4,11 +4,7 @@ import java.util.Scanner;
 
 public class JuiceCoffee extends Coffee {
 	
-	public void Coffee(int Pnum,  String Pname, int price) {
-		this.Pnum = Pnum + 23;
-		this.Pname = Pname;
-		this.price = price;
-	}
+	char answer = 'x';
 	
 	public void getCoffeeInput(Scanner input) {
 		System.out.println("Product Number: ");
@@ -19,7 +15,7 @@ public class JuiceCoffee extends Coffee {
 		String Pname = input.next();
 		this.setPname(Pname);
 		
-		char answer = 'x';
+		
 		while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
 			System.out.println("Do you want to ice? (Y/N)");
 			answer = input.next().charAt(0);
@@ -36,5 +32,12 @@ public class JuiceCoffee extends Coffee {
 				break;
 			}
 		}
+	}
+	
+	public void printInfo() {
+		System.out.println("Product Number : " + Pnum);
+		System.out.println("Product Name : " + Pname);
+		System.out.println("Product Price : " + price);
+		System.out.println("Ice : " + answer);
 	}
 }

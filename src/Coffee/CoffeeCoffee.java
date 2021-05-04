@@ -3,6 +3,9 @@ package Coffee;
 import java.util.Scanner;
 
 public class CoffeeCoffee extends Coffee {
+	
+	char answer = 'x';
+	
 	public void getCoffeeInput(Scanner input) {
 		System.out.println("Product Number: ");
 		int Pnum = input.nextInt();
@@ -12,7 +15,7 @@ public class CoffeeCoffee extends Coffee {
 		String Pname = input.next();
 		this.setPname(Pname);
 		
-		char answer = 'x';
+		
 		while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
 			System.out.println("Do you want to add caffein? (Y/N)");
 			answer = input.next().charAt(0);
@@ -29,5 +32,12 @@ public class CoffeeCoffee extends Coffee {
 				break;
 			}
 		}
+	}
+	
+	public void printInfo() {
+		System.out.println("Product Number : " + Pnum);
+		System.out.println("Product Name : " + Pname);
+		System.out.println("Product Price : " + price);
+		System.out.println("Caffein : " + answer);
 	}
 }
