@@ -3,14 +3,15 @@ import java.util.Scanner;
 import Coffee.AdeCoffee;
 import Coffee.Coffee;
 import Coffee.CoffeeCoffee;
+import Coffee.CoffeeInput;
 import Coffee.CoffeeKind;
 import Coffee.JuiceCoffee;
 import Coffee.TeaCoffee;
 
 public class CoffeeManager {
-	ArrayList<Coffee> coffees = new ArrayList<Coffee>();
-	Coffee coffee;
+	ArrayList<CoffeeInput> coffees = new ArrayList<CoffeeInput>();
 	Scanner input;
+	CoffeeInput coffeeinput;
 	
 	CoffeeManager(Scanner input) {
 		this.input = input; 
@@ -27,59 +28,51 @@ public class CoffeeManager {
 			System.out.println("4 for Tea");
 			System.out.println("Select num for Coffee Kind 1 ~ 4 :");
 			kind = input.nextInt();
-			if (kind == 1) {
-				coffee = new CoffeeCoffee();
-				coffee.getCoffeeInput(input);
-				coffees.add(coffee);				
-				break;
-			}
-			else if (kind == 2) {
-				coffee = new JuiceCoffee();
-				coffee.getCoffeeInput(input);
-				coffees.add(coffee);
-				break;
-			}
-			else if (kind == 3) {
-				coffee = new AdeCoffee();
-				coffee.getCoffeeInput(input);
-				coffees.add(coffee);
-				break;
-			}
-			else if (kind == 4) {
-				coffee = new TeaCoffee();
-				coffee.getCoffeeInput(input);
-				coffees.add(coffee);
-				break;
-			}
-			else {
-				System.out.println("Select num for Coffee Kind between 1 ~ 4 :");
-			}
-		}
-		
+			String ckind = getKind(kind);
 	}
+}
+	
+	public String getKind(int kind) {
+		String ckind = "None";
+		switch (kind) {
+		case 1: 
+			coffeeinput = new CoffeeCoffee();
+			coffeeinput.getCoffeeInput(input);
+			coffees.add(coffeeinput); 
+			ckind = "Coffee";
+			break; 
+		case 2: 
+			coffeeinput = new JuiceCoffee();
+			coffeeinput.getCoffeeInput(input);
+			coffees.add(coffeeinput); 
+			ckind = "Juice";
+			break;
+		case 3: 
+			coffeeinput = new AdeCoffee();
+			coffeeinput.getCoffeeInput(input);
+			coffees.add(coffeeinput);
+			ckind = "Ade";
+			break;
+		case 4: 
+			coffeeinput = new TeaCoffee();
+			coffeeinput.getCoffeeInput(input);
+			coffees.add(coffeeinput);
+			ckind = "Tea";
+			break;
+		default :
+			System.out.println("Select num for Coffee Kind between 1 ~ 4 :");
+		}
+		return ckind;
+	}
+	
 		
 	public void deleteProduct() {
 		System.out.println("Write the Product Number you want to delete.");
 		System.out.println("Product Number: ");
 		int Pnum = input.nextInt();
-		int index = -1;
-		
-		for (int i=0; i<coffees.size(); i++) {
-			if (coffees.get(i).getPnum() == Pnum) {
-				index = i;
-				break;
-			}
+		int index = findIndex(Pnum);
+		removefromCoffees(index,Pnum);
 		}
-		
-		if(index >= 0) {
-			coffees.remove(index);
-			System.out.println("The Product Number (" + Pnum + ") is deleted");
-		}
-		else {
-			System.out.println("The Product Number is empty");
-			return;
-		}
-	}
 		
 	public void editProduct() {
 		System.out.println("Write the Product Number you want to edit.");
@@ -91,15 +84,19 @@ public class CoffeeManager {
 				System.out.println("Choose the option you want to change.(1:Product Name, 2:Product Price)");
 				int choose= input.nextInt();
 				
-				if (choose == 1) {
+				switch(choose) {
+				case 1:
 					System.out.println("Write the Product Name you want to change.");
 					String edit = input.next();
 					coffees.get(i).setPname(edit);
-				}
-				else {
+					break;
+				case 2: 
 					System.out.println("Write the Product Price you want to change.");
-					int edit = input.nextInt();
-					coffees.get(i).setPrice(edit);
+					int edit2 = input.nextInt();
+					coffees.get(i).setPrice(edit2);
+					break;
+				default:
+					continue;
 				}
 			}
 		}
@@ -112,5 +109,30 @@ public class CoffeeManager {
 		for (int i=0; i<coffees.size(); i++) {
 			coffees.get(i).printInfo();
 		}
+	}
+
+	
+	public int removefromCoffees(int index, int Pnum) {
+		if(index >= 0) {
+			coffees.remove(index);
+			System.out.println("The Product Number (" + Pnum + ") is deleted");
+			return 1;
+		}
+		else {
+			System.out.println("The Product Number is empty");
+			return -1;
+		}
+	}
+	
+	public int findIndex(int Pnum) {
+		int index = -1;
+		
+		for (int i=0; i<coffees.size(); i++) {
+			if (coffees.get(i).getPnum() == Pnum) {
+				index = i;
+				break;
+			}
+		}
+		return index;
 	}
 }

@@ -2,7 +2,7 @@ package Coffee;
 
 import java.util.Scanner;
 
-public class Coffee {
+public abstract class Coffee implements CoffeeInput {
 	protected CoffeeKind kind = CoffeeKind.Coffee;
 	protected int Pnum;
 	protected String Pname;
@@ -49,11 +49,7 @@ public class Coffee {
 		this.price = price;
 	}
 	
-	public void printInfo() {
-		System.out.println("Product Number : " + Pnum);
-		System.out.println("Product Name : " + Pname);
-		System.out.println("Product Price : " + price);
-	}
+	public abstract void printInfo();
 	
 	public void getCoffeeInput(Scanner input) {
 		System.out.println("Product Number: ");
@@ -63,10 +59,22 @@ public class Coffee {
 		System.out.println("Product Name: ");
 		String Pname = input.next();
 		this.setPname(Pname);
-		
+		 
 		System.out.println("Product Price: ");
 		int price = input.nextInt();
 		this.setPrice(price);
+	}
+	
+	public void setPnum(Scanner input) {
+		System.out.println("Product Number: ");
+		int Pnum = input.nextInt();
+		this.setPnum(Pnum);
+	}
+	
+	public void setPname(Scanner input) {
+		System.out.println("Product Name: ");
+		String Pname = input.next();
+		this.setPname(Pname);
 	}
 	
 }

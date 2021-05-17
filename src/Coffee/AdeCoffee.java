@@ -1,5 +1,6 @@
 package Coffee;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AdeCoffee extends Coffee {
@@ -7,30 +8,12 @@ public class AdeCoffee extends Coffee {
 	char answer = 'x';
 	
 	public void getCoffeeInput(Scanner input) {
-		System.out.println("Product Number: ");
-		int Pnum = input.nextInt();
-		this.setPnum(Pnum);
-	
-		System.out.println("Product Name: ");
-		String Pname = input.next();
-		this.setPname(Pname);
+		setPnum(input);
 		
-		while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
-			System.out.println("Do you want to add fruite? (Y/N)");
-			answer = input.next().charAt(0);
-			if (answer == 'y' || answer == 'Y') {
-				System.out.println("Product Price: ");
-				int price = input.nextInt() + 1000;
-				this.setPrice(price);
-				break;
-			}
-			else if (answer == 'n' || answer == 'N') {
-				System.out.println("Product Price: ");
-				int price = input.nextInt();
-				this.setPrice(price);
-				break;
-			}
-		}
+		setPname(input);
+		
+		check(input);
+		
 	}
 	
 	public void printInfo() {
@@ -40,4 +23,31 @@ public class AdeCoffee extends Coffee {
 		System.out.println("Fruite : " + answer);
 	}
 	
+	public void check(Scanner input) {
+		boolean error = true;
+		while (error) {
+			try {
+				System.out.println("Do you want to add fruite? (Y/N)");
+				while (answer != 'y' || answer != 'Y' || answer != 'n' || answer != 'N') {
+					answer = input.next().charAt(0);
+					if (answer == 'y' || answer == 'Y') {
+						System.out.println("Product Price: ");
+						int price = input.nextInt() + 1000;
+						this.setPrice(price);
+						break;
+					}
+					else if (answer == 'n' || answer == 'N') {
+						System.out.println("Product Price: ");
+						int price = input.nextInt();
+						this.setPrice(price);
+						break;
+					}
+				}
+				break;
+			}
+			catch(InputMismatchException e) {
+				System.out.println("숫자를 입력하세요!");
+			}
+		}
+	}
 }
