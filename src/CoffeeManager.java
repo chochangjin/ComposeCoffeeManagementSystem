@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Coffee.AdeCoffee;
@@ -7,10 +8,17 @@ import Coffee.CoffeeInput;
 import Coffee.CoffeeKind;
 import Coffee.JuiceCoffee;
 import Coffee.TeaCoffee;
+import log.EventLogger;
 
-public class CoffeeManager {
+public class CoffeeManager implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6611855772552933427L;
+	
 	ArrayList<CoffeeInput> coffees = new ArrayList<CoffeeInput>();
-	Scanner input;
+	transient Scanner input;
 	CoffeeInput coffeeinput;
 	
 	CoffeeManager(Scanner input) {
