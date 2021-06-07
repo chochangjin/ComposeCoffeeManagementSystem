@@ -22,7 +22,7 @@ public class ComposeCoffee {
 		}
 		
 		WindowFrame frame = new WindowFrame(coffeemanager);
-	
+	    
 		int num=0;
 		
 		while (num != 6) {

@@ -1,4 +1,0 @@
-6월 07, 2021 11:09:30 오전 log.EventLogger log
-INFO: add a Product
-6월 07, 2021 11:09:31 오전 log.EventLogger log
-INFO: view Products

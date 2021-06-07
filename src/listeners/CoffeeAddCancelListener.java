@@ -8,18 +8,18 @@ import GUI.CoffeeAdder;
 import GUI.CoffeeViewer;
 import GUI.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class CoffeeAddCancelListener implements ActionListener {
 
 	WindowFrame frame;
 	
-	public ButtonAddListener(WindowFrame frame) {
+	public CoffeeAddCancelListener(WindowFrame frame) {
 		this.frame = frame;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getCoffeeadder());
+		frame.getContentPane().add(frame.getMenuselection());
 		frame.revalidate();
 		frame.repaint();
 	}

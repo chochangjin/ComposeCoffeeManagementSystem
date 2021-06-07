@@ -18,7 +18,7 @@ public class WindowFrame extends JFrame {
 	public WindowFrame(CoffeeManager coffeemanager) {
 		this.coffeemanager = coffeemanager;
 		this.menuselection = new MenuSelection(this);
-		this.coffeeadder = new CoffeeAdder(this);
+		this.coffeeadder = new CoffeeAdder(this, this.coffeemanager);
 		this.coffeeviewer = new CoffeeViewer(this, this.coffeemanager);
 		
 		this.setSize(500, 300);

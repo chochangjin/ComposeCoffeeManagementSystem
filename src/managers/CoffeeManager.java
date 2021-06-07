@@ -28,6 +28,10 @@ public class CoffeeManager implements Serializable {
 		this.input = input; 
 	}
 	
+	public void addProduct(CoffeeInput coffeeinput) {
+		coffees.add(coffeeinput); 
+	}
+	
 	public void addProduct() {
 		int kind = 0;
 		
