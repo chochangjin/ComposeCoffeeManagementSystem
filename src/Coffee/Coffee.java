@@ -1,8 +1,14 @@
 package Coffee;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Coffee implements CoffeeInput {
+public abstract class Coffee implements CoffeeInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	protected CoffeeKind kind = CoffeeKind.Coffee;
 	protected int Pnum;
 	protected String Pname;

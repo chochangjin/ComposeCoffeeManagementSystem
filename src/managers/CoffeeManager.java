@@ -1,3 +1,6 @@
+package managers;
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -118,7 +121,14 @@ public class CoffeeManager implements Serializable {
 			coffees.get(i).printInfo();
 		}
 	}
+	
+	public int size() {
+		return coffees.size();
+	}
 
+	public CoffeeInput get(int index) {
+		return (Coffee) coffees.get(index);
+	}
 	
 	public int removefromCoffees(int index, int Pnum) {
 		if(index >= 0) {

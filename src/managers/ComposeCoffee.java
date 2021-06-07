@@ -1,3 +1,4 @@
+package managers;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+import GUI.WindowFrame;
 import log.EventLogger;
 
 public class ComposeCoffee {
@@ -19,11 +21,12 @@ public class ComposeCoffee {
 			coffeemanager = new CoffeeManager(input);
 		}
 		
+		WindowFrame frame = new WindowFrame(coffeemanager);
+	
 		int num=0;
 		
 		while (num != 6) {
 			printmenu();
-			putObject(coffeemanager,"coffeemanager.ser");
 			
 		while ((num = input.nextInt()) !=6 ) {
 			switch (num) {
@@ -50,6 +53,7 @@ public class ComposeCoffee {
 			printmenu();
 			}
 		}
+		putObject(coffeemanager,"coffeemanager.ser");
 	}
 	
 	static public void printmenu() {

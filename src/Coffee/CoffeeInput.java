@@ -8,6 +8,10 @@ public interface CoffeeInput {
 	
 	public int getPnum();
 	
+	public String getPname();
+	
+	public int getPrice();
+	
 	public void setPrice(int price);
 	
 	public void printInfo();

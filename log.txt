@@ -1,4 +1,4 @@
-5월 17, 2021 4:37:34 오후 log.EventLogger log
+6월 07, 2021 11:09:30 오전 log.EventLogger log
 INFO: add a Product
-5월 17, 2021 4:37:59 오후 log.EventLogger log
+6월 07, 2021 11:09:31 오전 log.EventLogger log
 INFO: view Products
